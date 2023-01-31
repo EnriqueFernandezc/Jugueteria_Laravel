@@ -18,8 +18,10 @@ class ToyController extends Controller
         return view('toyIndex', compact('toys'));
     }
 
-    // metodo show mostrara el detalle de un juguete pasandole el objeto completo
-    public function show(){}
+    // metodo show mostrara el detalle de un solo juguete pasando el objeto a la vista
+    public function show(Toy $toy){
+        return view('toyshow', compact('toy'));
+    }
 
     public function create(){}
 

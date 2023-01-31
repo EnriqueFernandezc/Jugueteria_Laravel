@@ -21,6 +21,8 @@ Route::get('/', function () {
 })->name('inicio');
 
 Route::get('/toyindex', [ToyController::class, 'index'])->name('toyindex');
+Route::get('/toyshow/{toy}', [ToyController::class, 'show'])->name('toyshow'); //{toy} es el nombre del objeto que la ruta debe cargar
+
 
 Auth::routes();
 

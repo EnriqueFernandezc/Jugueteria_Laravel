@@ -28,7 +28,7 @@
                     <p class="card-text">Edad mínima recomendada: {{$toy->age}} </p>                        
                     @endisset
 
-                    <a href="#" class="btn btn-primary">Ver más</a>
+                    <a href="{{route('toyshow', $toy)}} " class="btn btn-primary">Ver más</a>
                 </div>
             </div>
         @endforeach    
