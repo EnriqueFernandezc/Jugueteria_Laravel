@@ -22,6 +22,14 @@ Route::get('/', function () {
 
 Route::get('/toyindex', [ToyController::class, 'index'])->name('toyindex');
 Route::get('/toyshow/{toy}', [ToyController::class, 'show'])->name('toyshow'); //{toy} es el nombre del objeto que la ruta debe cargar
+Route::get('/toycreate', [ToyController::class, 'create'])->name('toycreate');
+
+// crear una ruta post para el formulario que esta en la vista toycreate
+Route::post('/toystore', [ToyController::class, 'store'])->name('toystore');
+
+
+
+
 
 
 Auth::routes();

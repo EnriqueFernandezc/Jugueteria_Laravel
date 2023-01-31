@@ -34,6 +34,9 @@
         @endforeach    
     </div>
 
+    <div>
+        <a href="{{route('toycreate')}} " class="btn btn-primary">Nuevo artículo</a>
+    </div>
 
     </div>
 @endsection
