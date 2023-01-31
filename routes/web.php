@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ToyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,8 @@ Route::get('/', function () {
     // return view('welcome');
     return view('home'); 
 })->name('inicio');
+
+Route::get('/toyindex', [ToyController::class, 'index'])->name('toyindex');
 
 Auth::routes();
 
