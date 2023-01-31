@@ -50,11 +50,11 @@ class ToyController extends Controller
         // es decir se agrega la url de la imagen en la bd
         $toy->img = $url;
 
-        //guardar 
+        //guardar
+        $toy->saveOrFail();
 
-        //redirigir a otra vista despues de guardar
-
-
+        //redirigir al listado (index) despues de guardar
+        return redirect()->route('toyindex');
     }
 
     public function edit(){}
