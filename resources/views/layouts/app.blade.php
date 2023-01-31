@@ -22,7 +22,7 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{-- insertar logo con etiqueta img y definir tamaño de logo con style --}}
-                    <img src="{{asset('/img/Logo2.png')}} " alt="Logo" style="height: 2em"> {{ config('app.name', 'Laravel') }}
+                    <img src="{{asset('/img/Logo.png')}} " alt="Logo" style="height: 2em"> {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -34,7 +34,7 @@
 
                         {{-- insertar tres menus a la navbar --}}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
+                            <a class="nav-link" href="{{ route('inicio') }}">{{ __('Home') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Catálogo') }}</a>

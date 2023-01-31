@@ -17,7 +17,7 @@ Route::get('/', function () {
     // se cambia welcome por la vista home con fortify
     // return view('welcome');
     return view('home'); 
-});
+})->name('inicio');
 
 Auth::routes();
 
