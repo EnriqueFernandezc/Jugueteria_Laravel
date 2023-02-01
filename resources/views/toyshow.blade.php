@@ -17,14 +17,17 @@
                         <p class="card-text">Edad mínima recomendada: {{ $toy->age }} </p>
                     @endisset
 
-                    <div class="d-flex justify-content-between">
+                    @auth
+                        <div class="d-flex justify-content-between">
                             <a href="{{ route('toyedit', $toy) }}" class="btn btn-primary">Editar</a>
 
                             <form action="{{ route('toydestroy', $toy) }}" method="post">
                                 @csrf
                                 <button type="submit" class="btn btn-danger">Borrar</button>
                             </form>
-                    </div>
+                        </div>
+                    @endauth
+
 
                 </div>
             </div>
