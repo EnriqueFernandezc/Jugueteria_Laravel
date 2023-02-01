@@ -55,12 +55,43 @@ class ToyController extends Controller
 
         //redirigir al listado (index) despues de guardar
         return redirect()->route('toyindex');
+
+        // redirigir al articulo creado
+        // return redirect()->route('toyshow', $toy);
+        
     }
 
-    public function edit(){}
+    public function edit(Toy $toy){
+        return view('toyedit', compact('toy'));
+    }
 
-    public function update(){}
+    public function update(ToyRequest $request, Toy $toy){
+                // se pasa el array del request al método fill y este se encarga de actualizar
+                // los campos permitidos en el registro de la bd
+                $toy->fill($request->validated());
 
-    public function destroy(){}
+                $url = '';
+                // si la request tiene una imagen ejecutar codigo
+                if ($request->hasFile('img')){
+                    // el fichero request 'img' se guardara en la carpeta privada
+                    // storage 'public/toy' y su ruta se guardara en $url
+                    $url = Storage::url($request->file('img')->store('public/toy'));
+                }
+        
+                // el atributo img de $toy sera igual a $url
+                // es decir se agrega la url de la imagen en la bd
+                $toy->img = $url;
+        
+                //guardar
+                $toy->saveOrFail();
+        
+                //redirigir al listado (index) despues de guardar
+                return redirect()->route('toyindex');
+    }
+
+    public function destroy(Toy $toy){
+        $toy->deleteOrFail();
+        return redirect()->route('toyindex');
+    }
 
 }

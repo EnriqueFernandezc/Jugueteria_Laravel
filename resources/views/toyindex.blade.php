@@ -34,7 +34,7 @@
         @endforeach    
     </div>
 
-    <div>
+    <div class="d-flex justify-content-center mt-4">
         <a href="{{route('toycreate')}} " class="btn btn-primary">Nuevo artículo</a>
     </div>
 
