@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ToyController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +35,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/toyupdate/{toy}', [ToyController::class, 'update'])->name('toyupdate');
     Route::post('/toydestroy/{toy}', [ToyController::class, 'destroy'])->name('toydestroy');
 });
+
+Route::get('/contactcreate', [ContactController::class, 'create'])->name('contactcreate');
+Route::post('/contactstore', [ContactController::class, 'store'])->name('contactstore');
 
 Auth::routes();
 
