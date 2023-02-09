@@ -34,7 +34,7 @@
             @endforeach
         </div>
 
-        
+
         {{-- solo los usuarios autenticados pueden agregar articulos --}}
         @auth
             <div class="d-flex justify-content-center mt-4">
@@ -42,6 +42,12 @@
             </div>
         @endauth
 
+        {{-- si existe una variable de sesion 'info' se genera un alerta con el mensaje de session 'with('info', 'Mensaje enviado')' del metodo store de ContactController --}}
+        @if (session('info'))
+            <script>
+                alert(" {{ session('info') }}");
+            </script>
+        @endif
 
     </div>
 @endsection

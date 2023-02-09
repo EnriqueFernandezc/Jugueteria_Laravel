@@ -70,6 +70,7 @@ class ToyController extends Controller
                 // los campos permitidos en el registro de la bd
                 $toy->fill($request->validated());
 
+                //guardar la imagen enviada desde el formulario
                 $url = '';
                 // si la request tiene una imagen ejecutar codigo
                 if ($request->hasFile('img')){

@@ -12,10 +12,23 @@
                 <input type="text" name="title" class="form-control" id="title" placeholder="Ingrese nombre del artículo">
             </div>
 
+            {{-- error verifica si hay un error de validacion del campo name imprime un mensaje de error --}}
+            @error('title')
+                <br>
+                <small>*{{ $message }} </small>
+                <br>
+            @enderror
+
             <div class="form-group my-4">
                 <label for="description" class="form-label">Descripción</label>
                 <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
             </div>
+
+            @error('description')
+                <br>
+                <small>*{{ $message }}</small>
+                <br>
+            @enderror
 
             <div class="form-group my-4">
                 <label for="age" class="form-label">Edad recomendada</label>

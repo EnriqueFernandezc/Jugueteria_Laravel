@@ -9,17 +9,29 @@
 
             <div class="form-group my-4">
                 <label for="title" class="form-label">Nombre del artículo</label>
-                <input type="text" name="title" class="form-control" id="title" placeholder="Ingrese nombre del artículo" value="{{$toy->title}}">
+                <input type="text" name="title" class="form-control" id="title" placeholder="Ingrese nombre del artículo" value="{{old('title', $toy->title)}}">
             </div>
+
+            @error('title')
+                <br>
+                <small>*{{ $message }} </small>
+                <br>
+            @enderror
 
             <div class="form-group my-4">
                 <label for="description" class="form-label">Descripción</label>
-                <textarea name="description" id="description" cols="30" rows="10" class="form-control">value="{{$toy->description}}"</textarea>
+                <textarea name="description" id="description" cols="30" rows="10" class="form-control">value="{{old('description', $toy->description)}}"</textarea>
             </div>
+
+            @error('description')
+                <br>
+                <small>*{{ $message }} </small>
+                <br>
+            @enderror
 
             <div class="form-group my-4">
                 <label for="age" class="form-label">Edad recomendada</label>
-                <input type="number" name="age" class="form-control" id="age" placeholder="Ingrese la edad" value="{{$toy->age}}">
+                <input type="number" name="age" class="form-control" id="age" placeholder="Ingrese la edad" value="{{old('age', $toy->age)}}">
             </div>
 
             <div class="form-group my-4">

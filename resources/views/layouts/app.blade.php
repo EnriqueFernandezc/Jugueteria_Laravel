@@ -23,6 +23,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
+                    
                     {{-- insertar logo con etiqueta img y definir tamaño de logo con style --}}
                     <img src="{{ asset('/img/Logo.png') }}" alt="Logo" style="height: 2em">
                     {{ config('app.name', 'Laravel') }}

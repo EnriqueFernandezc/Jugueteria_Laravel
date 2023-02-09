@@ -41,10 +41,4 @@
         </form>
     </div>
 
-    {{-- si existe una variable de sesion 'info' se genera un alerta con el mensaje de session 'with('info', 'Mensaje enviado')' del metodo store de ContactController --}}
-    @if (session('info'))
-        <script>
-            alert(" {{session('info')}}");
-        </script>
-    @endif
 @endsection
